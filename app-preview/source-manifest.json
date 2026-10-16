@@ -1,0 +1,120 @@
+{
+  "appVersion": "0.19.1",
+  "method": "Complete DOM rendered by original desktop components, captured after native routing; no manually authored UI markup.",
+  "viewport": {
+    "width": 1920,
+    "height": 967
+  },
+  "behavior": "Left sidebar navigation and width resizing; composer accepts text; sending and other page actions are disabled.",
+  "runtime": "No desktop boot, RPC, Electron bridge, React or backend requests.",
+  "sources": [
+    {
+      "file": "app-initial-86767c3d23e5.js",
+      "sha256": "7efe2b0d4c8196901ff14167a7879de2b7049fd595eb6a880902befda2d28941"
+    },
+    {
+      "file": "app-primary-139889e10fbd.js",
+      "sha256": "febc2f71a5d6ef52c67df136874670f26549915a5c96f4d1ff46fcf54db202fa"
+    },
+    {
+      "file": "automations-page-d32cc2d783f9.js",
+      "sha256": "6ebc054c1560eba9a1af4ba934f1319978964ccfc71103b05a87cc7eef82d21d"
+    },
+    {
+      "file": "plugins-page-ab74c4c3acdd.js",
+      "sha256": "b76747c3bf08bad69f965bead8f054f3217fa4d2fcb1539bf3ea6cef6020796c"
+    },
+    {
+      "file": "local-conversation-page-af4ba21b7167.js",
+      "sha256": "5e315e7bd42b5a3c1c4b4bcc87878ebd115e633b61c99617e8d27756fb77f90f"
+    },
+    {
+      "file": "thread-scroll-layout-e1ad7d066d92.js",
+      "sha256": "b43d16dd0b4714a7605af6042185e8ca4360949027e4478a368a5ef70edabe4f"
+    }
+  ],
+  "adaptations": {
+    "catalogAllowlist": {
+      "办公协同": [
+        "腾讯文档",
+        "企业微信",
+        "飞书"
+      ],
+      "创意设计": [
+        "即梦",
+        "Remotion",
+        "HyperFrames by HeyGen"
+      ]
+    },
+    "otherPlugins": "Removed and replaced by one neutral SVG placeholder; original markup retained for the six selected cards.",
+    "officeDemo": {
+      "projectLabel": "网站",
+      "interactiveConversations": [
+        "准备产品发布",
+        "调研市场与竞品"
+      ],
+      "otherRows": "Display-only fictional office projects and recent conversations, cloned from native row markup.",
+      "productRelease": "Original checklist plus one native conversation turn containing the generated poster; native scrolling retained.",
+      "imageGenerationRecord": "image-generation.json"
+    }
+  },
+  "styles": [
+    {
+      "file": "app-initial-5b0a474bff5e.css",
+      "sha256": "3c3865c9f704dee3c444905a7625e757cd25c967a765d3f7710d8c14f46bd783",
+      "bytes": 817611
+    },
+    {
+      "file": "app-primary-7fe7c6486695.css",
+      "sha256": "15344808afb071bfde7baf2beb4dd0805aaf3db89eec0206776ee67cafc02691",
+      "bytes": 148567
+    },
+    {
+      "file": "thread-scroll-layout-26a32b412ec3.css",
+      "sha256": "248304cf7dab96e4c7aff4ece74d336a5aeb32370000e2f09e12f7028f709ac6",
+      "bytes": 1432
+    },
+    {
+      "file": "exec-shell-container-cecb2c03ae9a.css",
+      "sha256": "ff0971b7ee5e524c50f571d5d03c1efd50d10fc020703e9170e138535081e8a3",
+      "bytes": 2281
+    },
+    {
+      "file": "subagent-activity-chip-group-36aff719335b.css",
+      "sha256": "3686b8f241baa60b6f9a88085d9ed643039b0b9887f474457d02eba1f8978644",
+      "bytes": 2616
+    },
+    {
+      "file": "thread-user-message-navigation-rail-app-33e1d82a93e0.css",
+      "sha256": "c68cf20f60dd3363ec7dd8b2278b54efeca0520ae52dbaa6e1aa80d83a419ffa",
+      "bytes": 3602
+    },
+    {
+      "file": "cloud-automation-detail-panel-babd3c0f0928.css",
+      "sha256": "1604735eed4a715a143bce258cb65f92d2ea29e970017ece88061f0e3a7a2e3c",
+      "bytes": 48551
+    }
+  ],
+  "templates": [
+    {
+      "page": "task",
+      "sha256": "0feb0e0dff9fb7fb358bd2d374512d8046b296bf692d73f36a6d7efcfb5d0c0d",
+      "bytes": 137185
+    },
+    {
+      "page": "schedule",
+      "sha256": "2c48d629154a71a08545cc2064b3355f3ffd32e8ef17712b54e8fe959d524b2f",
+      "bytes": 114977
+    },
+    {
+      "page": "extensions",
+      "sha256": "20408e215d603200cf9bb81d25d087041ff3b5c2868344cbdc09d5744d184fb2",
+      "bytes": 122740
+    },
+    {
+      "page": "new-task",
+      "sha256": "32e257d060605a419e444154ae69eb00e64f40117ab1a72ddbff39451eacd0b1",
+      "bytes": 109427
+    }
+  ]
+}

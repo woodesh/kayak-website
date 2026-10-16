@@ -1,0 +1,6 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: ads-marketing. Asset type: a single landscape 3:2 poster image shown as an AI image-generation result in a Chinese office productivity app demo. Create a polished editorial poster for a fictional team creative workshop. Main exact Chinese title: “团队创意工作坊”. Small subtitle: “把好点子，变成下一步行动”. Bottom small label: “周五 14:00 · 共享会议室”. Clean warm ivory background, vivid cobalt blue and mint-green folded paper ribbons and translucent geometric sculptures arranged on a tabletop, soft natural shadows, crisp typesetting, generous whitespace, contemporary professional graphic design. Poster itself fills the entire image edge to edge; no browser, no UI, no device mockup, no company logos or watermarks. The abstract sculptural illustration occupies the right half, title on the left. High quality Chinese lettering, readable and restrained.",
+  "asset": "images/team-workshop.webp",
+  "source": "Generated for the website's fictional office conversation demo; resized to 1200×800 and encoded as WebP, quality 85."
+}

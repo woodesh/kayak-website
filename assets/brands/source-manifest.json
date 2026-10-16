@@ -1,0 +1,14 @@
+{
+  "openai": {
+    "source": "https://cdn.openai.com/brand/OpenAI-Logos-2025.zip",
+    "member": "OpenAI-logos(new)/SVGs/OpenAI-black-monoblossom.svg",
+    "asset": "tool-openai.svg",
+    "sha256": "7be72f1fea831d3ba81a545cee79b7e0ae69449d5d7837c9571ccbfb4aa1e00b"
+  },
+  "glm": {
+    "source": "https://www.zhipuai.cn/GLM-4.6.svg",
+    "source_page": "https://www.zhipuai.cn/zh",
+    "asset": "tool-glm.svg",
+    "sha256": "aad9a0aa58400e14c4b51a306d3bc5d23e9f7aa4341c48a57c1d20835c9cb3a6"
+  }
+}

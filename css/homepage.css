@@ -1,0 +1,1260 @@
+/* ==========================================================================
+   Kayak Production Homepage Styling & Craft Layer (Linear 1:1 Polish)
+   ========================================================================== */
+
+@font-face {
+  font-family: "Satoshi";
+  src: url('../assets/fonts/Satoshi-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+:root {
+  --font-regular: "Inter Variable", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", sans-serif;
+  --font-monospace: "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+  --color-bg-primary: #08090a;
+  --color-text-primary: #f7f8f8;
+  --color-text-secondary: #9ba1a6;
+  --color-text-muted: #8a8f98;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+section[id], #benefits, #integrations, #app-window, #download {
+  scroll-margin-top: 88px;
+}
+
+.kayak-skip-link {
+  position: fixed;
+  top: 12px;
+  left: 16px;
+  z-index: 2000;
+  padding: 10px 18px;
+  background: #f7f8f8;
+  color: #08090a;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+}
+.kayak-skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Navigation Bar Polish */
+.TZTsQG_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(8, 9, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.TZTsQG_rightSideWrapper {
+  width: auto;
+  max-width: none;
+  margin-left: auto;
+  gap: 16px;
+}
+.TZTsQG_anchor[data-nav-menu] {
+  gap: 6px;
+  cursor: pointer;
+}
+.TZTsQG_anchor[aria-expanded="true"] {
+  color: var(--color-text-primary) !important;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Navigation Items & Hover Dropdown */
+.TZTsQG_navItems {
+  align-items: center;
+  gap: 6px;
+}
+.TZTsQG_anchor {
+  font-size: 13.5px !important;
+  color: #8a8f98 !important;
+  transition: color 0.15s ease, background 0.15s ease !important;
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+}
+.TZTsQG_anchor:hover {
+  color: #f7f8f8 !important;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.kayak-nav-dropdown-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.kayak-dropdown-trigger {
+  cursor: pointer;
+}
+.kayak-nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 440px;
+  padding: 8px;
+  background: rgba(15, 16, 18, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.08) inset;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  z-index: 1002;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s ease;
+  pointer-events: none;
+}
+.kayak-nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+.kayak-nav-dropdown-item:hover .kayak-nav-dropdown-menu,
+.kayak-nav-dropdown-item:focus-within .kayak-nav-dropdown-menu,
+.kayak-nav-dropdown-item.is-open .kayak-nav-dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(6px);
+  pointer-events: auto;
+}
+.kayak-nav-dropdown-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.kayak-dropdown-link {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.12s ease;
+}
+.kayak-dropdown-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.kayak-dropdown-title {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #f7f8f8;
+  line-height: 1.35;
+}
+.kayak-dropdown-desc {
+  font-size: 12px;
+  color: #8a8f98;
+  line-height: 1.45;
+}
+.kayak-dropdown-link:hover .kayak-dropdown-desc {
+  color: #b0b4ba;
+}
+
+/* Header Action CTA Button (白底黑字) */
+.kayak-header-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  color: #08090a;
+  border: 1px solid #ffffff;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.kayak-header-cta-btn:hover {
+  background: #e6e8ec;
+  border-color: #e6e8ec;
+  color: #08090a;
+  transform: translateY(-1px);
+}
+
+/* Mobile Drawer Fallback */
+#navigation-panel {
+  position: fixed;
+  top: calc(var(--header-height) + 8px);
+  right: max(24px, var(--page-padding-right));
+  z-index: 1001;
+  width: 520px;
+  padding: 12px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 12px;
+  background: #101112;
+}
+.kayak-nav-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.kayak-nav-group {
+  display: flex;
+  flex-direction: column;
+}
+.kayak-nav-group a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  border-radius: 8px;
+  color: var(--color-text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.kayak-nav-group a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.kayak-nav-group small, .kayak-nav-group-heading {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.kayak-nav-group-heading {
+  padding: 8px 12px;
+}
+.kayak-nav-group a:focus-visible, [data-nav-menu]:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}
+
+.TZTsQG_logoLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.kayak-brand-name {
+  font-family: "Satoshi", sans-serif;
+  font-size: 17px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f5f5f7;
+}
+.TZTsQG_logoLink > img, .kayak-footer-brand > img {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Hero Section Typography & Rhythm */
+.QI8oKG_container {
+  --kayak-hero-leading-space: 90px;
+  position: relative;
+  isolation: isolate;
+  padding-top: 24px;
+}
+@media (max-width: 1024px) {
+  .QI8oKG_container { --kayak-hero-leading-space: 46px; }
+}
+@media (max-width: 640px) {
+  .QI8oKG_container { --kayak-hero-leading-space: 60px; }
+}
+.kayak-hero-video {
+  position: absolute;
+  z-index: -1;
+  top: calc(-1 * var(--kayak-hero-leading-space) - 12px);
+  right: -24px;
+  bottom: -40px;
+  width: 60%;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 45%), linear-gradient(to bottom, transparent, #000 2%), url("../assets/video/hero-edge-mask.svg?v=2");
+  mask-image: linear-gradient(to right, transparent, #000 45%), linear-gradient(to bottom, transparent, #000 2%), url("../assets/video/hero-edge-mask.svg?v=2");
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-mode: alpha;
+}
+.kayak-hero-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% center;
+  filter: grayscale(1);
+}
+.kayak-hero-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.24);
+}
+.kayak-hero-brand-scene {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: clamp(32px, 4vw, 64px);
+  width: 272px;
+  height: 176px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.kayak-hero-mark {
+  display: block;
+  width: 144px;
+  height: auto;
+  margin: 0 auto;
+}
+.kayak-hero-brand-words {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.kayak-hero-word {
+  color: var(--word-rest, #9c9c9c);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.kayak-hero-word-link {
+  flex: 0 0 20px;
+  stroke: #666;
+  stroke-width: 0.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.kayak-hero-word-link path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.kayak-hero-mark-body,
+.kayak-hero-mark-bow {
+  fill: none;
+  stroke: #aaa;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+@media (min-width: 1100px) {
+  .kayak-hero-brand-scene {
+    display: block;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html.kayak-motion-ready .kayak-hero-mark-body {
+    animation: kayak-mark-draw 1.8s cubic-bezier(0.65, 0, 0.35, 1) 0.4s both;
+  }
+  html.kayak-motion-ready .kayak-hero-mark-bow {
+    animation: kayak-mark-draw 1.2s cubic-bezier(0.65, 0, 0.35, 1) 0.8s both;
+  }
+  html.kayak-motion-ready .kayak-hero-word {
+    animation: kayak-word-reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--word-delay) both;
+  }
+  html.kayak-motion-ready .kayak-hero-word-link path {
+    animation: kayak-word-connect 0.65s ease var(--line-delay) both;
+  }
+}
+@keyframes kayak-mark-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes kayak-word-reveal {
+  0% { opacity: 0; clip-path: inset(100% 0 0); transform: translateY(6px); color: #f7f7f7; }
+  55% { opacity: 1; clip-path: inset(0); transform: translateY(0); color: #f7f7f7; }
+  100% { opacity: 1; clip-path: inset(0); transform: translateY(0); color: var(--word-rest, #9c9c9c); }
+}
+@keyframes kayak-word-connect {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Force override of minified 360px restriction */
+.QI8oKG_title {
+  max-width: 920px !important;
+  margin: 0 !important;
+}
+.kayak-hero-headline {
+  font-size: clamp(26px, 3.2vw, 42px) !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.025em !important;
+  font-weight: 600 !important;
+  color: #f7f8f8 !important;
+  text-wrap: balance !important;
+}
+
+.QI8oKG_descriptionContainer {
+  margin-top: 24px !important;
+}
+.QI8oKG_description {
+  max-width: 580px !important;
+  font-size: 14.5px !important;
+  line-height: 1.65 !important;
+  color: #9ba1a6 !important;
+  text-wrap: pretty !important;
+}
+
+.kayak-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.kayak-hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #08090a;
+  padding: 9px 20px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.kayak-hero-btn-primary:hover {
+  background: #e6e8ec;
+  transform: translateY(-1px);
+}
+
+.kayak-hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #f7f8f8;
+  border: 1px solid var(--color-border-subtle);
+  padding: 9px 18px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.kayak-hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-border-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   App Showcase Mockup (INTACT - PRESERVED EXACTLY AS REQUIRED)
+   ========================================================================== */
+.kayak-hero-shell > .WS84WW_background,
+.kayak-hero-shell > .WS84WW_shadows,
+.kayak-hero-shell > .WS84WW_shade {
+  pointer-events: none;
+}
+.kayak-app-canvas {
+  position: relative;
+  width: var(--width);
+  height: 665px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #ffffff14;
+  border-radius: var(--app-radius);
+  background: #181818;
+}
+.kayak-app-preview {
+  display: block;
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 1920px;
+  height: 967px;
+  border: 0;
+  background: #181818;
+  transform-origin: top left;
+}
+
+/* ==========================================================================
+   Toolstrip Integrations Section (#integrations)
+   ========================================================================== */
+.kayak-tool-caption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.kayak-tool-caption svg {
+  flex-shrink: 0;
+}
+.kayak-tool-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 24px;
+}
+.kayak-tool-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f7f8f8;
+  font-size: 18.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: -0.015em;
+  opacity: 0.92;
+  transition: opacity 0.2s, color 0.2s;
+}
+.kayak-tool-wordmark:hover {
+  opacity: 1;
+  color: #ffffff;
+}
+.kayak-tool-wordmark img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: invert(1);
+  opacity: 0.92;
+  transition: opacity 0.2s, filter 0.2s;
+}
+.kayak-tool-wordmark img.kayak-tool-icon-native {
+  filter: none;
+}
+.kayak-tool-wordmark:hover img {
+  opacity: 1;
+}
+
+.igJSCV {
+  color: #8a8f98 !important;
+}
+
+@media (max-width: 1024px) {
+  .kayak-tool-strip {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .kayak-tool-wordmark {
+    flex: 0 0 28%;
+    justify-content: center;
+    font-size: 16px;
+  }
+}
+@media (max-width: 640px) {
+  .kayak-tool-strip {
+    row-gap: 24px;
+    column-gap: 16px;
+  }
+  .kayak-tool-wordmark {
+    font-size: 14px;
+    gap: 8px;
+  }
+  .kayak-tool-wordmark img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ==========================================================================
+   Section: Architecture Manifesto Heading (#benefits)
+   Centered, Unified Typography matching site scale
+   ========================================================================== */
+.kayak-benefits-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.kayak-benefits-title {
+  margin: 0;
+  font-size: clamp(20px, 2.2vw, 27px) !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 600 !important;
+  color: #f7f8f8 !important;
+  text-wrap: balance !important;
+}
+.kayak-benefits-desc {
+  margin: 14px auto 0 !important;
+  max-width: 560px;
+  font-size: 14.5px !important;
+  line-height: 1.65 !important;
+  color: #8a8f98 !important;
+  text-wrap: pretty !important;
+}
+@media (max-width: 640px) {
+  .kayak-benefits-title {
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+  }
+  .kayak-benefits-desc {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-top: 12px !important;
+    text-wrap: balance !important;
+  }
+}
+
+/* ==========================================================================
+   Benefit Cards (Fig 0.1, 0.2, 0.3)
+   ========================================================================== */
+.GJ9TEa_carouselCard, .GJ9TEa_benefit {
+  padding: 20px !important;
+  border-radius: 12px !important;
+}
+.GJ9TEa_carouselCard {
+  position: relative;
+}
+.GJ9TEa_carouselCard .GJ9TEa_figure {
+  top: 16px;
+  left: 20px;
+}
+.GJ9TEa_figure {
+  font-family: var(--font-monospace) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  color: #8a8f98 !important;
+  opacity: 1 !important;
+  text-transform: uppercase !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .GJ9TEa_carouselIllustration ._3fVNxW_gridLoader circle,
+  .GJ9TEa_illustration ._3fVNxW_gridLoader circle {
+    animation: none;
+  }
+}
+.kayak-card-title {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.015em !important;
+  color: #f7f8f8 !important;
+}
+.kayak-card-body {
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  color: var(--color-text-secondary) !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+   Alternating Feature Story Rows
+   ========================================================================== */
+.kayak-feature-story {
+  max-width: var(--homepage-max-width, 1440px);
+  margin: 0 auto;
+  padding: 64px 48px 96px;
+  display: grid;
+  gap: 96px;
+}
+.kayak-feature-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-areas: "media copy";
+  align-items: center;
+  gap: 64px;
+}
+.kayak-feature-row-reverse {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  grid-template-areas: "copy media";
+}
+.kayak-feature-copy {
+  grid-area: copy;
+  min-width: 0;
+}
+.kayak-feature-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-family: var(--font-monospace);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a8f98;
+  margin-bottom: 12px;
+}
+.kayak-feature-copy h2 {
+  margin: 0;
+  font-size: clamp(20px, 1.85vw, 26px);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: #f7f8f8;
+  text-wrap: balance;
+}
+.kayak-feature-copy p {
+  margin: 14px 0 0;
+  max-width: 30em;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  text-wrap: pretty;
+}
+
+.kayak-feature-media {
+  grid-area: media;
+  min-width: 0;
+  margin: 0;
+  aspect-ratio: 1586 / 992;
+  overflow: hidden;
+  background: transparent;
+}
+.kayak-feature-media > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+}
+
+/* ==========================================================================
+   Footer (Matching Reference Multi-Column Layout)
+   ========================================================================== */
+.kayak-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #08090a;
+  padding: 56px 0 40px;
+}
+.kayak-footer-inner {
+  width: 100%;
+  max-width: var(--homepage-max-width);
+  padding-left: calc(var(--homepage-padding-inset) + var(--homepage-outer-padding) - 1px);
+  padding-right: calc(var(--homepage-padding-inset) + var(--homepage-outer-padding) - 1px);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+.kayak-footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 64px;
+  padding-bottom: 40px;
+}
+.kayak-footer-brand-col {
+  max-width: 340px;
+}
+.kayak-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+.kayak-footer-brand img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.kayak-footer-brand-name {
+  font-family: "Satoshi", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f7f8f8;
+}
+.kayak-footer-tagline {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #8a8f98;
+  margin: 0;
+}
+.kayak-footer-nav-cols {
+  display: flex;
+  gap: 80px;
+}
+.kayak-footer-col {
+  display: flex;
+  flex-direction: column;
+}
+.kayak-footer-heading {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f7f8f8;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+}
+.kayak-footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.kayak-footer-list li a {
+  font-size: 12.5px;
+  color: #8a8f98;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+.kayak-footer-list li a:hover {
+  color: #f7f8f8;
+}
+.kayak-footer-list .k-item-name {
+  color: #d0d6e0;
+  transition: color 0.15s ease;
+}
+.kayak-footer-list li a:hover .k-item-name {
+  color: #ffffff;
+}
+.kayak-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+}
+.kayak-footer-copy {
+  font-size: 12px;
+  color: #8a8f98;
+  line-height: 1.5;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .kayak-tool-strip {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .kayak-tool-wordmark {
+    flex: 0 0 28%;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .kayak-feature-story {
+    padding-inline: 32px;
+    gap: 96px;
+  }
+  .kayak-feature-row {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .kayak-feature-story {
+    padding: 48px 24px 80px;
+    gap: 80px;
+  }
+  .kayak-feature-row, .kayak-feature-row-reverse {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "copy" "media";
+    gap: 28px;
+  }
+  .kayak-feature-copy h2 {
+    font-size: clamp(26px, 4vw, 30px);
+  }
+  .kayak-feature-media > img {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  }
+}
+
+@media (max-width: 768px) {
+  .QI8oKG_container {
+    padding-top: 12px;
+  }
+  .kayak-hero-video {
+    right: -16px;
+    bottom: auto;
+    width: 85%;
+    height: calc(var(--kayak-hero-leading-space) + 132px);
+  }
+  .TZTsQG_navItems {
+    display: none;
+  }
+  #navigation-panel.kayak-mobile-navigation {
+    top: calc(var(--header-height) + 8px);
+    right: 16px;
+    left: 16px;
+    width: auto;
+    max-height: calc(100dvh - var(--header-height) - 24px);
+    overflow-y: auto;
+  }
+  .kayak-mobile-navigation .kayak-nav-groups {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .kayak-hero-headline {
+    font-size: clamp(23px, 7.4vw, 30px) !important;
+  }
+  .kayak-brand-name {
+    font-size: 16px;
+  }
+  .kayak-app-canvas {
+    transform: scale(0.5);
+    transform-origin: top left;
+  }
+  .kayak-footer {
+    padding: 48px 0 36px;
+  }
+  .kayak-footer-main {
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 36px;
+  }
+  .kayak-footer-brand-col {
+    max-width: 100%;
+  }
+  .kayak-footer-nav-cols {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+/* ==========================================================================
+   Page Preloader & Motion Engine (Step 165)
+   ========================================================================== */
+
+/* Top Scroll Progress Line (Refined Minimalist Grey) */
+.kayak-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  z-index: 999999;
+  background: linear-gradient(90deg, #484b52 0%, #8a8f98 50%, #dcdfe4 100%);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  transition: width 0.08s linear;
+}
+
+/* Page Preloader (Minimalist Kayak Brand Entrance) */
+.kayak-page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 999998;
+  background: #08090a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+}
+
+.kayak-page-loader.is-loaded {
+  opacity: 0;
+  transform: scale(1.02);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.kayak-loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.kayak-loader-icon-wrap {
+  width: auto;
+  height: auto;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kayak-loader-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  /* 简单下方淡一点：纯粹向下极弱自然微光投影，无大面积弥散荧光 */
+  filter: drop-shadow(0 6px 12px rgba(255, 255, 255, 0.08));
+  animation: kayakLogoFloat 1.6s ease-in-out infinite alternate;
+}
+
+.kayak-loader-bar {
+  width: 96px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.kayak-loader-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #484b52 0%, #8a8f98 50%, #dcdfe4 100%);
+  border-radius: 999px;
+  animation: kayakLoaderFill 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes kayakLogoFloat {
+  0% {
+    transform: translateY(0);
+    filter: drop-shadow(0 5px 10px rgba(255, 255, 255, 0.06));
+  }
+  100% {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 8px 14px rgba(255, 255, 255, 0.10));
+  }
+}
+
+@keyframes kayakLoaderFill {
+  0% { width: 15%; }
+  50% { width: 75%; }
+  100% { width: 100%; }
+}
+
+/* Scroll Reveal Classes (only active when JS sets .kayak-motion-ready on html) */
+html.kayak-motion-ready .kayak-reveal,
+html.kayak-motion-ready .GJ9TEa_carouselCard,
+html.kayak-motion-ready .GJ9TEa_benefit {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+html.kayak-motion-ready .kayak-reveal.is-revealed,
+html.kayak-motion-ready .GJ9TEa_carouselCard.is-revealed,
+html.kayak-motion-ready .GJ9TEa_benefit.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger for cards */
+html.kayak-motion-ready .GJ9TEa_carouselCard,
+html.kayak-motion-ready .GJ9TEa_benefit {
+  transition-delay: calc(var(--item-index, 0) * 0.09s);
+}
+
+/* Feature rows: copy and media synchronized arrival */
+html.kayak-motion-ready .kayak-feature-row {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+html.kayak-motion-ready .kayak-feature-row.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html.kayak-motion-ready .kayak-feature-row .kayak-feature-media {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.kayak-motion-ready .kayak-feature-row:hover .kayak-feature-media {
+  transform: translateY(-3px);
+}
+
+/* Header dynamic scroll styling */
+.TZTsQG_header {
+  transition: background 0.3s ease, border-color 0.3s ease, -webkit-backdrop-filter 0.3s ease, backdrop-filter 0.3s ease !important;
+}
+.TZTsQG_header.is-scrolled {
+  background: rgba(8, 9, 10, 0.8) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   Page Scrollbar Component (右栏页面滚动条组件 - Linear Craft)
+   ========================================================================== */
+
+@media (min-width: 769px) {
+  html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  html::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.kayak-scrollbar-comp {
+  position: fixed;
+  right: 6px;
+  top: 84px;
+  bottom: 28px;
+  width: 16px;
+  z-index: 999990;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  opacity: 0.32;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+
+.kayak-scrollbar-comp:hover,
+.kayak-scrollbar-comp.is-active,
+.kayak-scrollbar-comp.is-dragging {
+  opacity: 1;
+}
+
+.kayak-scrollbar-track {
+  position: relative;
+  width: 3px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+  cursor: pointer;
+}
+
+.kayak-scrollbar-comp:hover .kayak-scrollbar-track,
+.kayak-scrollbar-comp.is-active .kayak-scrollbar-track {
+  width: 5px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Draggable Active Thumb */
+.kayak-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 42px;
+  background: linear-gradient(180deg, #6c717b 0%, #9ba1a6 50%, #dcdfe4 100%);
+  border-radius: 999px;
+  cursor: grab;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+  will-change: transform, height;
+  z-index: 3;
+}
+
+.kayak-scrollbar-thumb:hover,
+.kayak-scrollbar-thumb.is-dragging {
+  background: #f7f8f8;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.kayak-scrollbar-thumb.is-dragging {
+  cursor: grabbing;
+}
+
+/* Section Marker Ticks */
+.kayak-scroll-marker {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.24);
+  border: 1px solid #08090a;
+  outline: none;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.kayak-scrollbar-comp:hover .kayak-scroll-marker {
+  width: 7px;
+  height: 7px;
+}
+
+.kayak-scroll-marker:hover,
+.kayak-scroll-marker.is-active {
+  background: #ffffff;
+  transform: translate(-50%, -50%) scale(1.35);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.45);
+}
+
+/* Floating Section Title / Progress Pill */
+.kayak-scrollbar-badge {
+  position: absolute;
+  right: 22px;
+  top: 0;
+  transform: translateY(-50%);
+  background: rgba(18, 19, 22, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #f7f8f8;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 0 1px rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: top, opacity;
+  z-index: 10;
+}
+
+.kayak-scrollbar-comp:hover .kayak-scrollbar-badge,
+.kayak-scrollbar-comp.is-active .kayak-scrollbar-badge {
+  opacity: 1;
+}
+
+/* Mobile: hide custom floating scrollbar, fallback to touch native */
+@media (max-width: 768px) {
+  .kayak-scrollbar-comp {
+    display: none !important;
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .kayak-page-loader {
+    display: none !important;
+  }
+  .kayak-scroll-progress {
+    display: none !important;
+  }
+  .kayak-scrollbar-comp {
+    opacity: 0.8 !important;
+  }
+  html.kayak-motion-ready .kayak-reveal,
+  html.kayak-motion-ready .GJ9TEa_carouselCard,
+  html.kayak-motion-ready .GJ9TEa_benefit,
+  html.kayak-motion-ready .kayak-feature-row {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

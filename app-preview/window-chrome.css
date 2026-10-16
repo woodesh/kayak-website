@@ -1,0 +1,10 @@
+/* Use the native application zoom token for every captured view. */
+:root { --codex-window-zoom: 1.4; }
+
+/* The macOS traffic lights belong to the native window, outside React. */
+body::before {
+  content: ""; position: fixed; z-index: 100; pointer-events: none;
+  zoom: var(--codex-window-zoom);
+  left: 16px; top: 16px; width: 14px; height: 14px; border-radius: 50%;
+  background: #ff5f57; box-shadow: 23px 0 #febc2e, 46px 0 #28c840;
+}

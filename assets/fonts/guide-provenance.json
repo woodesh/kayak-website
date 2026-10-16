@@ -1,0 +1,29 @@
+{
+  "source_project": "/Users/linisu/Desktop/Code/KayakGuide",
+  "files": [
+    {
+      "source": "/Users/linisu/Desktop/Code/KayakGuide/public/kayak-icon.png",
+      "asset": "website/assets/kayak-icon.png",
+      "bytes": 12561,
+      "sha256": "010c700d26cd312801425789b6878f22727518b637652a913931a163fc35cd92"
+    },
+    {
+      "source": "/Users/linisu/Desktop/Code/KayakGuide/src/fonts/Satoshi-Variable.woff2",
+      "asset": "website/assets/fonts/Satoshi-Variable.woff2",
+      "bytes": 42588,
+      "sha256": "e739aff9b4d02c264341d6d4872edcda28e79373aeda936f659566a1cd3eb47f"
+    }
+  ],
+  "brand": {
+    "wordmark": "KAYAK",
+    "font": "Satoshi",
+    "fontWeight": 700,
+    "fontSize": 18,
+    "letterSpacing": "-0.025em",
+    "iconSize": 24,
+    "iconRadius": 6,
+    "gap": 8
+  },
+  "fallback": "Body: system sans-serif, PingFang SC, Microsoft YaHei, Noto Sans CJK SC. Satoshi is used only for the KAYAK brand wordmarks.",
+  "scope": "Header/footer KAYAK wordmarks and icons/favicon follow KayakGuide. All other website text uses system Heiti/sans-serif. Native app-preview styles remain authentic desktop styles."
+}
