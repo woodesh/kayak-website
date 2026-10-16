@@ -156,7 +156,7 @@
     const nav = document.createElement('nav');
     nav.className = 'kayak-nav-groups';
     nav.setAttribute('aria-label', mobile ? '网站导航' : '产品');
-    const groups = mobile ? [productGroups.flat(), [['工作台', '#app-window'], ['核心架构', '#benefits'], ['系统控制', '#plan'], ['工具生态', '#ai'], ['下载', '#download']]] : productGroups;
+    const groups = mobile ? [productGroups.flat(), [['工作台', '#app-window'], ['核心架构', '#benefits'], ['系统控制', '#plan'], ['工具生态', '#ai'], ['法律版指南', 'https://docs.kuanshi.media'], ['下载', '#download']]] : productGroups;
     groups.forEach((items, index) => {
       const group = document.createElement('div');
       group.className = 'kayak-nav-group';
