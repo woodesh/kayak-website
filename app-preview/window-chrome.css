@@ -8,3 +8,15 @@ body::before {
   left: 16px; top: 16px; width: 14px; height: 14px; border-radius: 50%;
   background: #ff5f57; box-shadow: 23px 0 #febc2e, 46px 0 #28c840;
 }
+
+/* Keep catalog placeholders on the native cards' grid and typography scale. */
+.kayak-extension-placeholder-shape {
+  display: block;
+  background: currentColor;
+  opacity: 0.08;
+}
+.kayak-extension-placeholder-line {
+  display: flex;
+  align-items: center;
+  height: 1lh;
+}

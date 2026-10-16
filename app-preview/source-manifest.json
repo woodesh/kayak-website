@@ -46,7 +46,7 @@
         "HyperFrames by HeyGen"
       ]
     },
-    "otherPlugins": "Removed and replaced by one neutral SVG placeholder; original markup retained for the six selected cards.",
+    "otherPlugins": "Removed and replaced by neutral static placeholder rows using the native catalog grid and dimensions; original markup retained for the six selected cards.",
     "officeDemo": {
       "projectLabel": "网站",
       "interactiveConversations": [
@@ -108,8 +108,8 @@
     },
     {
       "page": "extensions",
-      "sha256": "20408e215d603200cf9bb81d25d087041ff3b5c2868344cbdc09d5744d184fb2",
-      "bytes": 122740
+      "sha256": "10acf7fb38e831668c2f0e4e929a04b10c0ac9c9c8377be2fed7eb73678308cb",
+      "bytes": 127766
     },
     {
       "page": "new-task",

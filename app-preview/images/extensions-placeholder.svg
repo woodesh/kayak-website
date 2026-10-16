@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="180" viewBox="0 0 1560 180" fill="none">
-  <title>更多扩展占位示意</title>
-  <defs>
-    <linearGradient id="fade" x1="780" y1="0" x2="780" y2="180" gradientUnits="userSpaceOnUse"><stop stop-color="#333" stop-opacity=".65"/><stop offset="1" stop-color="#242424" stop-opacity=".15"/></linearGradient>
-    <g id="row"><rect width="38" height="38" rx="10"/><rect x="52" y="7" width="110" height="7" rx="3.5"/><rect x="52" y="23" width="250" height="5" rx="2.5"/><rect x="440" y="6" width="45" height="26" rx="8"/></g>
-  </defs>
-  <g fill="url(#fade)"><use href="#row" x="8" y="16"/><use href="#row" x="536" y="16"/><use href="#row" x="1064" y="16"/><use href="#row" x="8" y="86"/><use href="#row" x="536" y="86"/><use href="#row" x="1064" y="86"/></g>
-</svg>
